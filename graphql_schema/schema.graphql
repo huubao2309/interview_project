@@ -1,0 +1,155 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+type todos {
+    created_at: String!
+    id: Int!
+    is_completed: Boolean!
+    is_public: Boolean!
+    title: String!
+    user: [users!]
+    user_id: String!
+}
+
+type todos_select_column {
+    created_at: String!
+    id: Int
+    is_completed: Boolean
+    is_public: Boolean
+    title: String!
+    user_id: Int!
+}
+
+type todos_bool_exp {
+    _and: [todos_bool_exp]
+    _not: todos_bool_exp
+    _or: [todos_bool_exp]
+    created_at: String!
+    id: Int
+    is_completed: Boolean
+    is_public: Boolean
+    title: String!
+    user: users_bool_exp
+    user_id: Int!
+}
+
+type users_bool_exp {
+    _and: [users_bool_exp]
+    _not: users_bool_exp
+    _or: [users_bool_exp]
+    id: String
+    name: String
+    todos: todos_bool_exp
+}
+
+type users{
+    id: String!
+    name: String!
+    todos(
+        distinct_on: [users_select_column!]
+        limit: Int
+        offset: Int
+        order_by: [todos_order_by!]
+        #        where: users_bool_exp
+    ): [todos!]!
+}
+
+input users_select_column{
+    id: Int!
+    name: String!
+}
+
+type users_order_by{
+    id: Int!
+    last_seen: order_by
+    user: users_order_by
+}
+
+input todos_constraint {
+    todos_pkey: ID!
+}
+
+type Mutation {
+    insert_todos_one(object: todos_insert_input!): todos!
+}
+
+type Subscription {
+    todos(
+        distinct_on: [todos_sub_select_column!]
+        limit: Int
+        offset: Int
+        order_by: [todos_order_by!]
+        #        where: todos_bool_exp
+    ): [todos!]!
+}
+
+input todos_update_column {
+    is_completed: String!
+    title: String!
+}
+
+type Query {
+    todos(
+        distinct_on: [messages_select_column!]
+        limit: Int
+        offset: Int
+        order_by: [messages_select_column!]
+        where: messages_select_column
+    ): [todos_select_column!]!
+}
+
+enum messages_select_column {
+    id
+    title
+    user_id
+}
+
+enum todos_order_by {
+    created_at
+    id
+    is_completed
+    is_public
+    title
+    user
+    user_id
+}
+
+enum todos_sub_select_column {
+    created_at
+    id
+    is_completed
+    is_public
+    title
+    user_id
+}
+
+input todos_insert_input {
+    is_public: Boolean
+    title: String
+}
+
+input todos_on_conflict{
+    constraint: todos_constraint!
+    update_columns: [todos_update_column!]!
+    #    where: todos_bool_exp
+}
+
+input PostUpdateInput {
+    body: String
+    title: String
+    userId: Int
+}
+
+enum order_by {
+    asc
+    asc_nulls_first
+    asc_nulls_last
+    desc
+    desc_nulls_first
+    desc_nulls_last
+}

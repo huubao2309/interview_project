@@ -1,0 +1,7 @@
+query getActiveTodos10{
+    todos(distinct_on: [title]) {
+        is_completed
+        title
+        id
+    }
+}

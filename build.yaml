@@ -1,0 +1,26 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - graphql_queries/**
+      - graphql_schema/schema.graphql
+    builders:
+      artemis:
+        options:
+          generate_helpers: true
+          schema_mapping:
+
+            ##### Mutation ####
+            - schema: graphql_schema/schema.graphql
+              queries_glob: graphql_queries/mutation/demo_mutation.graphql
+              output: lib/data/graphql/mutation/demo_mutation_graphql.dart
+
+            ##### Query ####
+            - schema: graphql_schema/schema.graphql
+              queries_glob: graphql_queries/query/demo_query.graphql
+              output: lib/data/graphql/query/demo_query_graphql.dart
+
+            #### Subscription ####
+            - schema: graphql_schema/schema.graphql
+              queries_glob: graphql_queries/subscription/demo_subscription.graphql
+              output: lib/data/graphql/subscription/demo_subscription_graphql.dart

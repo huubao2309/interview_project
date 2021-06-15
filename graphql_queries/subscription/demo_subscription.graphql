@@ -1,0 +1,6 @@
+subscription {
+    todos {
+        id
+        title
+    }
+}

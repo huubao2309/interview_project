@@ -1,0 +1,21 @@
+android {
+    flavorDimensions "app"
+
+    productFlavors {
+        prod {
+            dimension "app"
+            applicationIdSuffix ".prod"
+            versionNameSuffix "-prod"
+        }
+        dev {
+            dimension "app"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+        uat {
+            dimension "app"
+            applicationIdSuffix ".uat"
+            versionNameSuffix "-uat"
+        }
+    }
+}

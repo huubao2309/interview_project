@@ -1,0 +1,9 @@
+mutation ($value: String!){
+    insert_todos_one(object: {title: $value}) {
+        title
+        user {
+            name
+            id
+        }
+    }
+}

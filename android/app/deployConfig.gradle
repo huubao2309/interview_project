@@ -1,0 +1,19 @@
+android {
+
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.canRead()) {
+        def versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def version_code = versionProps['VERSION_CODE_INTERVIEW_APP'].toInteger()
+        def version_name = versionProps['VERSION_NAME_INTERVIEW_APP']
+
+        defaultConfig {
+            versionCode version_code
+            versionName version_name
+        }
+
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+}

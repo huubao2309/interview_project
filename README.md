@@ -4,12 +4,12 @@
 
 * If you has error:
 
-![Error_Run](https://github.com/huubao2309/interview_project/tree/main/images/error_run.png)
+![Error_Run](https://github.com/huubao2309/interview_project/blob/main/images/error_run.png)
 
 * Fix it:
 
-![Change_config](https://github.com/huubao2309/interview_project/tree/main/images/edit_config.png)
-![fix_error](https://github.com/huubao2309/interview_project/tree/main/images/fix_error.png)
+![Change_config](https://github.com/huubao2309/interview_project/blob/main/images/edit_config.png)
+![fix_error](https://github.com/huubao2309/interview_project/blob/main/images/fix_error.png)
 
 ## HOW TO CREATE A NEW FILE GRAPHQL?:
 

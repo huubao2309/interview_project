@@ -16,6 +16,7 @@
 ## FIX RENDER GRAPHQL:
 
 * If you has error:
+
 ![error_graphql](https://github.com/huubao2309/interview_project/blob/main/images/graphql/error_graphql.png)
 
 * Fix it:

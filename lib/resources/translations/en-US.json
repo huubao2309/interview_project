@@ -356,6 +356,8 @@
   "deny": "Deny",
   "otp_not_match": "OTP code not match",
   "err_reason_cancel_order": "Please input reason cancel order",
-  "err_otp_cancel_order": "Please input OTP"
+  "err_otp_cancel_order": "Please input OTP",
+  "id": "Id",
+  "title": "Title"
 }
 

@@ -1,5 +1,5 @@
-query getActiveTodos10{
-    todos(distinct_on: [title]) {
+query getActiveTodos($limit: Int, $offset: Int) {
+    todos(limit: $limit, offset: $offset) {
         is_completed
         title
         id

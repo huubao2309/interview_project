@@ -7,6 +7,7 @@ class SPrefCache {
   static const KEY_ACCESS_TOKEN = 'key_access_token';
   static const TOKEN_TYPE = 'token_type';
   static const ACCEPT_LANGUAGE = 'accept_language';
+  static const USER_NAME = 'user_name';
 
   // Session Logger
   static const LOGGER_SESSION = 'loggerSession';

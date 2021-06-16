@@ -361,6 +361,8 @@
   "deny": "Từ chối",
   "otp_not_match": "Mã OTP không đúng",
   "err_reason_cancel_order": "Bạn chưa nhập lí do hủy đơn",
-  "err_otp_cancel_order": "Bạn chưa nhập OTP"
+  "err_otp_cancel_order": "Bạn chưa nhập OTP",
+  "id": "Id",
+  "title": "Title"
 }
 

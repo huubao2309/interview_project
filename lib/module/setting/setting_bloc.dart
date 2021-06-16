@@ -34,7 +34,7 @@ class SettingBloc extends BaseBloc with ChangeNotifier {
   Sink<String?> get loadFullNameSink => _loadFullNameSubject.sink;
 
   Future<void> loadUserNameApp() async {
-    const fullName = 'Anonymous';
+    final fullName = await SPref.instance.get(SPrefCache.USER_NAME);
     loadFullNameSink.add(fullName);
   }
 

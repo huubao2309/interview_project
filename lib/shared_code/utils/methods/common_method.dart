@@ -51,6 +51,7 @@ Error createError(String errorStr) {
 
 Future<void> clearSPrefCache() async {
   await SPref.instance.set(SPrefCache.KEY_ACCESS_TOKEN, '');
+  await SPref.instance.set(SPrefCache.USER_NAME, '');
 }
 
 String formatNumber(String s) {

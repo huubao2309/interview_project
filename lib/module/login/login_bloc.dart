@@ -71,6 +71,7 @@ class LoginBloc extends BaseBloc with ChangeNotifier {
           if (result.isNotEmpty) {
             // Save token
             SPref.instance.set(SPrefCache.KEY_ACCESS_TOKEN, result);
+            SPref.instance.set(SPrefCache.USER_NAME, e.username);
             processEventSink.add(LoginSuccessEvent(token: result));
           } else {
             processEventSink.add(LoginFailEvent(tr('errorLogin'))); // Notify Result

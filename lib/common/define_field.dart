@@ -88,6 +88,7 @@ const PLATFORM_FIELD = 'platform';
 const OS_FIELD = 'os';
 const REASON_FIELD = 'reason';
 const OTP_FIELD = 'otp';
+const MESSAGE_FIELD = 'message';
 
 
 // Upload Image

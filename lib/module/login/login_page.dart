@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:interview_project/common/define_image.dart';
 import 'package:interview_project/data/service/login_service/login_service.dart';
+import 'package:interview_project/module/sign_up/sign_up_page.dart';
+import 'package:interview_project/shared_code/model/login_model/request_login_model.dart';
 import 'package:provider/provider.dart';
 import 'package:interview_project/base/base_event.dart';
 import 'package:interview_project/base/base_widget.dart';
@@ -63,6 +65,11 @@ class _LoginFormWidgetState extends State<LoginInFormWidget> {
   bool _obscureText = true;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => LoginBloc(loginRepository: Provider.of(context)),
@@ -95,6 +102,8 @@ class _LoginFormWidgetState extends State<LoginInFormWidget> {
                       _buildPasswordLogin(bloc),
                       const SizedBox(height: 18),
                       _buildSignInButton(bloc),
+                      const SizedBox(height: 23),
+                      _buildRegisterAccount(bloc),
                       const Spacer(),
                       Align(
                         alignment: Alignment.bottomCenter,
@@ -250,6 +259,7 @@ class _LoginFormWidgetState extends State<LoginInFormWidget> {
       value: bloc.btnLoginStream,
       child: Consumer<bool>(
         builder: (context, enable, child) => NormalButton(
+          color: AppColor.primaryColor,
           title: tr('next').toUpperCase(),
           onPressed: () {
             bloc.event.add(
@@ -261,6 +271,40 @@ class _LoginFormWidgetState extends State<LoginInFormWidget> {
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildRegisterAccount(LoginBloc bloc) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        // Text(
+        //   tr('recover_password'),
+        //   style: LoginPageTextStyle.contentLogin(),
+        // ),
+        const SizedBox(),
+        GestureDetector(
+          onTap: () {
+            // Register Account
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpPage())).then((value) {
+              if (value != null) {
+                final account = value as RequestAccountModel;
+                _txtUserNameController.text = account.username!;
+                _txtPasswordController.text = account.password!;
+              }
+            });
+          },
+          child: Text(
+            tr('register_account'),
+            style: TextStyle(
+              fontSize: 15,
+              color: AppColor.textSecondColor,
+              decoration: TextDecoration.underline,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ),
+      ],
     );
   }
 

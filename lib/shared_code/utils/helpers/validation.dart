@@ -9,7 +9,10 @@ class Validation {
     return regex.hasMatch(id);
   }
 
-  static bool isPassValid(String pass) {
+  static bool isPassValid(String? pass) {
+    if (pass == null) {
+      return false;
+    }
     return pass.length >= 6;
   }
 
@@ -36,11 +39,15 @@ class Validation {
   }
 
   static bool isEmailValid(String email) {
-    final regexEmail = RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+    final regexEmail = RegExp(
+        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
     return regexEmail.hasMatch(email);
   }
 
-  static bool isCharactersValid(String character) {
+  static bool isCharactersValid(String? character) {
+    if (character == null) {
+      return false;
+    }
     final regexCharacters = RegExp(r'^[a-zA-Z0-9]+$');
     return regexCharacters.hasMatch(character);
   }

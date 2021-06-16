@@ -13,7 +13,7 @@ class NormalButton extends StatelessWidget {
     this.focusNode,
   });
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String title;
   final Color? color;
   final double? heightButton;
@@ -35,8 +35,8 @@ class NormalButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           // background color    this is color:
           (states) => states.contains(MaterialState.disabled)
-              ? color ?? AppColor.primaryColor[500]
-              : color ?? AppColor.primaryColor.withOpacity(0.2),
+              ? (color != null ? color!.withOpacity(0.2) : AppColor.primaryColor.withOpacity(0.2))
+              : color ?? AppColor.primaryColor[500],
         ),
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

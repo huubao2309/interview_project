@@ -8,7 +8,7 @@ import 'package:interview_project/shared_code/utils/materials/constant.dart';
 class GraphQLService {
   GraphQLService._internal();
 
-  static String _token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYW9zYXRuaGFuMTcxOTIzQGdtYWlsLmNvbSIsIm5hbWUiOiJiYW9zYXRuaGFuMTcxOTIzIiwiaWF0IjoxNjA2OTYxMDU4LjM0MiwiaXNzIjoiaHR0cHM6Ly9oYXN1cmEuaW8vbGVhcm4vIiwiaHR0cHM6Ly9oYXN1cmEuaW8vand0L2NsYWltcyI6eyJ4LWhhc3VyYS1hbGxvd2VkLXJvbGVzIjpbInVzZXIiXSwieC1oYXN1cmEtdXNlci1pZCI6ImJhb3NhdG5oYW4xNzE5MjNAZ21haWwuY29tIiwieC1oYXN1cmEtZGVmYXVsdC1yb2xlIjoidXNlciIsIngtaGFzdXJhLXJvbGUiOiJ1c2VyIn0sImV4cCI6MTYwNzA0NzQ1OH0.fFCmJqvIm3900pmaQWfmIKB36cBWsG74HoNFWkDUJhs';
+  static String _token = '';
 
   static final HttpLink httpLink = HttpLink(graphQLServiceUrl);
 

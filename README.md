@@ -1,5 +1,14 @@
 # INTERVIEW APP
 
+
+## FRAMEWORK:
+
+```dart
+	Flutter: 2.2.1
+	IDE: Android studio v4.2.1
+```
+
+
 ## FIX RUN PROJECT WITH FLAVOR:
 
 * If you has error:

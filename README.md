@@ -1,1 +1,63 @@
-# interview_project
+# INTERVIEW APP
+
+## HOW TO CREATE A NEW FILE GRAPHQL?:
+
+### B1: Create file at **\graphql_queries**
+
+- With **Query**: create at **\graphql_queries\query**
+
+- With **Mutation**: create at **\graphql_queries\mutation**
+
+- With **Subscription**: create at **\graphql_queries\subscription**
+
+
+### B2: Add **schema_mapping** at **build.yaml**
+
+- With **Query**:
+
+```dart
+	schema_mapping:
+		- schema: graphql_schema/schema.graphql
+		  queries_glob: graphql_queries/query/[name_file]_query.graphql
+		  output: lib/data/graphql/query/[name_file]_query_graphql.dart
+```	
+
+- With **Mutation**:
+
+```dart
+	schema_mapping:
+		- schema: graphql_schema/schema.graphql
+		  queries_glob: graphql_queries/mutation/[name_file]_mutation.graphql
+		  output: lib/data/graphql/mutation/[name_file]_mutation_graphql.dart
+```	
+
+- With **Subscription**:
+
+```dart
+	schema_mapping:
+		- schema: graphql_schema/schema.graphql
+		  queries_glob: graphql_queries/subscription/[name_file]_subscription.graphql
+		  output: lib/data/graphql/subscription/[name_file]_subscription_graphql.dart
+```	
+
+- **Note**: **[name_file]** should match with query at **schema.graphql**
+
+### B3: Delete folder **lib\data\graphql**
+
+### B4: Run script at Terminal
+
+```dart
+	flutter pub run build_runner build
+```
+
+### B5: Test file at **lib\data\graphql\**
+
+- With **Query**: create at **lib\data\graphql\query**
+
+- With **Mutation**: create at **lib\data\graphql\mutation**
+
+- With **Subscription**: create at **lib\data\graphql\subscription**
+
+### Refer:
+- Refer: https://hasura.io/learn/graphql/flutter-graphql/setup/
+

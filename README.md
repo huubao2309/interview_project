@@ -1,6 +1,6 @@
 # INTERVIEW APP
 
-## FIX RUN PROJECT WITH FLAVOR?:
+## FIX RUN PROJECT WITH FLAVOR:
 
 * If you has error:
 
@@ -9,7 +9,25 @@
 * Fix it:
 
 ![Change_config](https://github.com/huubao2309/interview_project/blob/main/images/edit_config.png)
+
 ![fix_error](https://github.com/huubao2309/interview_project/blob/main/images/fix_error.png)
+
+
+## FIX RENDER GRAPHQL:
+
+* If you has error:
+![error_graphql](https://github.com/huubao2309/interview_project/blob/main/images/graphql/error_graphql.png)
+
+* Fix it:
+
+![run_script](https://github.com/huubao2309/interview_project/blob/main/images/graphql/run_script.png)
+
+![run_script_success](https://github.com/huubao2309/interview_project/blob/main/images/graphql/run_script_success.png)
+
+* Result:
+
+![show_data_folder](https://github.com/huubao2309/interview_project/blob/main/images/graphql/show_data_folder.png)
+
 
 ## HOW TO CREATE A NEW FILE GRAPHQL?:
 

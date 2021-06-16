@@ -19,7 +19,11 @@
 
 ![error_graphql](https://github.com/huubao2309/interview_project/blob/main/images/graphql/error_graphql.png)
 
-* Fix it:
+* Fix it with script:
+
+```dart
+	flutter pub run build_runner build
+```
 
 ![run_script](https://github.com/huubao2309/interview_project/blob/main/images/graphql/run_script.png)
 
